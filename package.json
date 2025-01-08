@@ -10,8 +10,11 @@
     "test": "jest"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.20.3",
     "react": "18.3.1",
-    "react-native": "0.76.5"
+    "react-native": "0.76.5",
+    "react-native-map-clustering": "^3.4.2",
+    "react-native-maps": "^1.20.1"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
