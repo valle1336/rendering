@@ -4,6 +4,19 @@ import MapView, {Marker} from 'react-native-maps';
 import MapViewCluster from 'react-native-map-clustering';
 
 export default function App() {
+  interface ClusterPressEvent {
+    clusterId: number;
+    position: {
+      latitude: number;
+      longitude: number;
+    };
+    markers: any[]; // Ändra till mer specifik typ om möjligt
+  }
+
+  const handleClusterPress = (cluster: ClusterPressEvent) => {
+    console.log('Cluster pressed:', cluster);
+  };
+
   return (
     <View style={styles.container}>
       <MapViewCluster
@@ -17,7 +30,7 @@ export default function App() {
         }}
         clusterColor="#FF5341" // Färg på klustrets cirkel
         clusterRadius={50} // Radie för klustrets gräns
-      >
+        onClusterPress={cluster => handleClusterPress(cluster)}>
         {/* Första markören */}
         <Marker
           coordinate={{latitude: -25.163, longitude: 131.044}}
